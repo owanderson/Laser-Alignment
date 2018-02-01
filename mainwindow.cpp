@@ -83,6 +83,8 @@ void MainWindow::OnFileSave()
 void MainWindow::BeamAlign()
 {
     statusBar()->showMessage("Aligning in progress...");
+    std::system("./owen");
+
 }
 
 
