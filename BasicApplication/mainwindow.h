@@ -22,4 +22,8 @@ private slots:
     void OnFileSave();
     void MoveRight();
     void MoveLeft();
+    void gpio4rightPress();
+    void gpio4leftPress();
+    void gpio5rightPress();
+    void gpio5leftPress();
 };
