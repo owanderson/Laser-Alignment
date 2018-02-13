@@ -1,7 +1,7 @@
 #include <wiringPi.h>
 #include <softPwm.h>
 
-#define PINNUM	0
+#define PINNUM	1
 
 int main (void)
 {
