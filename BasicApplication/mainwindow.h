@@ -21,4 +21,5 @@ private slots:
     void OnFileOpen();
     void OnFileSave();
     void MoveRight();
+    void MoveLeft();
 };

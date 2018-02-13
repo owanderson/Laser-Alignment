@@ -4,13 +4,6 @@
 #include <QtCore>
 
 
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
-
-#include <home/pi/wiringPi/wiringPi/wiringPi.h>
-#include <home/pi/wiringPi/wiringPi/softServo.h>
-
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -20,8 +13,6 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowTitle("Laser Alignment");
 
     setMinimumSize(800, 450);
-
-
 
 
     // == MENU BAR ==
@@ -42,6 +33,11 @@ MainWindow::MainWindow(QWidget *parent) :
     // Move Right
     action = new QAction("Move Right", this);
     connect(action, &QAction::triggered, this, &MainWindow::MoveRight);
+    menu2->addAction(action);
+
+    // Move Left
+    action = new QAction("Move Left", this);
+    connect(action, &QAction::triggered, this, &MainWindow::MoveLeft);
     menu2->addAction(action);
 
 
@@ -91,28 +87,14 @@ void MainWindow::OnFileSave()
 void MainWindow::MoveRight()
 {
     statusBar()->showMessage("Moving right...");
+    std::system("./MoveRight");
 
-    if (wiringPiSetup () == -1)
-    {
-    fprintf (stdout, "oops: %s\n", strerror (errno)) ;
-    return 1 ;
-    }
+}
 
-    softServoSetup (0, 1, 2, 3, 4, 5, 6, 7) ;
-
-    softServoWrite (0,  500) ;
-/*
-    softServoWrite (1, 1000) ;
-    softServoWrite (2, 1100) ;
-    softServoWrite (3, 1200) ;
-    softServoWrite (4, 1300) ;
-    softServoWrite (5, 1400) ;
-    softServoWrite (6, 1500) ;
-    softServoWrite (7, 2200) ;
-*/
-
-    for (;;)
-    delay (10) ;
+void MainWindow::MoveLeft()
+{
+    statusBar()->showMessage("Moving left...");
+    std::system("./MoveLeft");
 
 }
 
