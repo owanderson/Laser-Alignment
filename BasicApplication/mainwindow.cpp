@@ -8,8 +8,8 @@
 #include <errno.h>
 #include <string.h>
 
-#include <drogon/wiringpi/wiringPi/wiringPi.h>
-#include <drogon/wiringpi/wiringPi/softServo.h>
+#include <home/wiringpi/wiringPi/wiringPi.h>
+#include <home/wiringpi/wiringPi/softServo.h>
 
 
 MainWindow::MainWindow(QWidget *parent) :
