@@ -1,4 +1,6 @@
-![Alt text](thispc/pictures?raw=true "Title")
+
+
+![alt text](http://url/to/img.png)https://github.com/owanderson/Laser-Alignment/blob/master/Logo.png)
 
 Laser alignment can be a time consuming process, and manual acess to optics is not always possible due to the safety requirements of using high power lasers. Automated systems exist, but they are expensive. Our project aims to automate the laser alignment process, using a rasberry pi and a keeping the hardware expendature below £100.
 
