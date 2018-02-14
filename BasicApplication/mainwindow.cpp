@@ -95,6 +95,40 @@ MainWindow::MainWindow(QWidget *parent) :
     gpio5left->show();
 
 
+    //BUTTONS FOR GPIO6 SERVO-CONTROL
+    QPushButton *gpio6right = new QPushButton(this);
+    gpio6right->setText("GPIO6 Right");
+    connect(gpio6right, SIGNAL (released()), this, SLOT (gpio6rightPress()));
+    gpio6right->move(380, 40);
+    gpio6right->show();
+
+    QPushButton *gpio6left = new QPushButton(this);
+    gpio6left->setText("GPIO6 Left");
+    connect(gpio6left, SIGNAL (released()), this, SLOT (gpio6leftPress()));
+    gpio6left->move(380, 80);
+    gpio6left->show();
+
+    //BUTTONS FOR GPIO13 SERVO-CONTROL
+    QPushButton *gpio13right = new QPushButton(this);
+    gpio13right->setText("GPIO13 Right");
+    connect(gpio13right, SIGNAL (released()), this, SLOT (gpio13rightPress()));
+    gpio13right->move(560, 40);
+    gpio13right->show();
+
+    QPushButton *gpio13left = new QPushButton(this);
+    gpio13left->setText("GPIO13 Left");
+    connect(gpio13left, SIGNAL (released()), this, SLOT (gpio13leftPress()));
+    gpio13left->move(560, 80);
+    gpio13left->show();
+
+    //BUTTONS FOR RASTER COMMAND
+    QPushButton *rasterButton = new QPushButton(this);
+    rasterButton->setText("Raster Scan");
+    connect(rasterButton, SIGNAL (released()), this, SLOT (rasterPress()));
+    rasterButton->move(20, 200);
+    rasterButton->setFixedSize(200,200);
+    rasterButton->show();
+
 }
 
 // == PRIVATE SLOTS ==
@@ -154,10 +188,42 @@ void MainWindow::gpio5rightPress()
 void MainWindow::gpio5leftPress()
 {
     statusBar()->showMessage("Moving GPIO5 Left...");
-    std::system("./MoveRight 5");
-
+    std::system("./MoveLeft 5");
 
 }
 
+void MainWindow::gpio6rightPress()
+{
+    statusBar()->showMessage("Moving GPIO6 Right...");
+    std::system("./MoveRight 6");
 
+}
+
+void MainWindow::gpio6leftPress()
+{
+    statusBar()->showMessage("Moving GPIO6 Left...");
+    std::system("./MoveLeft 6");
+
+}
+
+void MainWindow::gpio13rightPress()
+{
+    statusBar()->showMessage("Moving GPIO13 Right...");
+    std::system("./MoveRight 13");
+
+}
+
+void MainWindow::gpio13leftPress()
+{
+    statusBar()->showMessage("Moving GPIO13 Left...");
+    std::system("./MoveLeft 13");
+
+}
+
+void MainWindow::rasterPress()
+{
+    statusBar()->showMessage("Rastering...");
+    //insert code here for a raster scan of servo motors
+
+}
 

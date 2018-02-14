@@ -26,4 +26,9 @@ private slots:
     void gpio4leftPress();
     void gpio5rightPress();
     void gpio5leftPress();
+    void gpio6rightPress();
+    void gpio6leftPress();
+    void gpio13rightPress();
+    void gpio13leftPress();
+    void rasterPress();
 };
