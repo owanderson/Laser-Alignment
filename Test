@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int distances {
+	float distance_1, distance_2	
+	cout << "What is the path length from the first mirror to the first photodiode?";
+	getline(cin, distance_1);
+	std::cout << "What is the path length from the second mirror to the second photodiode?";
+	getline(cin, distance_2);
+/*
+
+	// This allows us to standardise some code, if we use it.
+	// It generalises some calculations based on trig
+	// We can know how wide the PWM pulse should be based on the 		// required resolution for the distance.
+	float angle_per_pulsewidth = 0;
+	float constant_desired_resolution = 0;
+	float required_angle_one;
+	required_angle = atan(desired_resolution/distance_1);
+
+*/
+	 
+}
+
+int raster_setup {
+/*
+	  Initial steps of alignment. We must assume that both
+	screw threads are roughly in the middle, otherwise this won't
+	work and might make the mount a pain in the arse. */
+	
+	
+	for( int n=0,n<5, n++) {
+		move_up;
+		move_left;
+	}	
+}
+
+
+
+int main ()
+{
+	/* "While the program is on, but align hasn't been pressed". 
+	This will be handled by QT calling functions in the command 		line */
+
+	/* ACTUALLY, it is probably not advantageous to have the bulk 		of the programming inside QT. We will likely be much better 		getting QT to call a single script which can run everything 		else without 
+	*/
+
+	while (off != 1) {
+		/* SHOW GUI */
+		/* INITIALISATION CODE */
+		/* TAKE IN DISTANCE MEASUREMENTS */
+		/* RASTER_SETUP */
+		/* PHOTODIODE BACKGROUND LEVELS */
+		
+		/* "While the align button has been pressed, but the
+		system is not yet aligned." 
+		This will also be handled by QT, probably, calling 			functions in the CL.
+		*/
+		
+		
+		while (align_bool == 1) {
+			/* RASTER CODE */
+				/* PHOTODIODE READINGS */
+		}
+	}
+}
