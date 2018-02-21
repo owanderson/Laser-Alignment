@@ -55,13 +55,39 @@ int main ()
 		
 		/* "While the align button has been pressed, but the
 		system is not yet aligned." 
-		This will also be handled by QT, probably, calling 			functions in the CL.
+		This will also be handled by QT, probably, calling 
+		functions in the CL.
 		*/
 		
 		
 		while (align_bool == 1) {
 			/* RASTER CODE */
-				/* PHOTODIODE READINGS */
+			/* PHOTODIODE READINGS */
+			for (n = 0, n < 5, n++){
+				
+				for (n =0, n< 9, n++)
+					{
+					move_right
+					if (Read(GIPO we want) >= threshold{
+						goto label
+						}
+				}
+				move_down;
+				move_down;
+				for (n =0, n< 9, n++)
+					{
+					move_left
+					if (Read(GIPO we want) >= threshold{
+						goto label
+						}
+				}
+				move_down;
+				move_down;
+			
+			}
+		label:
+				
+		
 		}
 	}
 }
