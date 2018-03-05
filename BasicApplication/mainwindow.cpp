@@ -164,7 +164,7 @@ void MainWindow::MoveLeft()
 void MainWindow::gpio4rightPress()
 {
     statusBar()->showMessage("Moving GPIO4 Right...");
-    std::system("./MoveRight");
+    std::system("./MoveRight 5");
 
 
 }
@@ -172,7 +172,7 @@ void MainWindow::gpio4rightPress()
 void MainWindow::gpio4leftPress()
 {
     statusBar()->showMessage("Moving GPIO4 Left...");
-    std::system("./MoveLeft");
+    std::system("./MoveLeft 5");
 
 
 }
@@ -180,7 +180,7 @@ void MainWindow::gpio4leftPress()
 void MainWindow::gpio5rightPress()
 {
     statusBar()->showMessage("Moving GPIO5 Right...");
-    std::system("./MoveRight 5");
+    std::system("./MoveRight 27");
 
 
 }
@@ -188,7 +188,7 @@ void MainWindow::gpio5rightPress()
 void MainWindow::gpio5leftPress()
 {
     statusBar()->showMessage("Moving GPIO5 Left...");
-    std::system("./MoveLeft 5");
+    std::system("./MoveLeft 27");
 
 }
 
