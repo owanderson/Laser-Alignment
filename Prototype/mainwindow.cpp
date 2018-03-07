@@ -241,7 +241,7 @@ void MainWindow::rasterPress()
 
 
 void MainWindow::readfile(){
-    QString filename="E:\\Prototype\\test.txt";
+    QString filename="test.txt";
     QFile file(filename);
     if(!file.exists()){
         qDebug() << "NO existe el archivo "<<filename;
