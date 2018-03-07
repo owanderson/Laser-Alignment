@@ -228,7 +228,7 @@ void MainWindow::gpio13leftPress()
 
 void MainWindow::rasterPress()
 {
-    statusBar()->showMessage("Rastering...");
+
     //insert code here for a raster scan of servo motors
     std::system("./gogo");
     readfile();
@@ -260,9 +260,7 @@ void MainWindow::readfile(){
     }
     file.close();
 
-    QTextEdit *txt = new QTextEdit();
-    txt->setText(line);
-    txt->show();
+    statusBar()->showMessage(line);
 }
 
 
