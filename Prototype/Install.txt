@@ -1,0 +1,15 @@
+To install - 
+
+gcc -Wall -pthread -o MoveLeft move_left.c -lpigpio
+
+gcc -Wall -pthread -o MoveRight move_right.c -lpigpio
+
+gcc -Wall newattempt.c -o gogo -lwiringPi
+
+qmake
+
+make
+
+To Run -
+
+sudo ./BasicApplication
