@@ -234,6 +234,7 @@ void MainWindow::rasterPress()
     readfile();
 
 
+
 }
 
 
