@@ -5,7 +5,7 @@
 
 Welcome to the Laser-Alignment project!
 
-Laser alignment can be a time consuming process, and manual access to optics is not always possible due to the safety requirements of using high power lasers. Automated systems exist, but they are expensive. Our project aims to automate the laser alignment process using a raspberry pi, keeping the hardware expenditure to a fraction of the cost of conventional solutions.
+Laser alignment can be a time consuming process, and manual access to optics is not always possible due to the safety requirements of using high power lasers. Automated systems exist, but they are expensive. Our project aims to automate the laser alignment process using a Raspberry Pi, keeping the hardware expenditure to a fraction of the cost of conventional solutions.
 
 ## Components
 - 4x continuous rotation servo motors
