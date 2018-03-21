@@ -22,22 +22,22 @@ Our software will facilitate manual mirror control, as well as providing several
 The group consists of Owen Anderson, Rowan Pocock and Nicholas Smith. Owen is responsible for GUI implementation, Rowan is responsible for all hardware and Nicholas is responsible for motor control synchronisation.
 The mirror mount to be automated in this project is a standard kinematic mirror mount for 1” optics, shown below. This can be ordered from Thorlabs: [https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=1492] and is a typical optical mount used for standard laser system setups. 
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/Thorlabs 1 inch mirror mount.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/Mount.png)
 
 All hardware to connect motors to optical components has been designed on TinkerCad and 3D printed on a Flashforge Finder 3D printer. The fundamental hardware component is the motorised mirror mount, shown in the image below. This connects the mount dials to the motors, then links the two motors together and braces them by bolting them onto the spare mirror mount screw hole. 
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/Motorised mirror mount.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/MMM.png)
 
 A screenshot of the CAD drawing of two sets of these motor holders is also shown. 
 
 The laser used in this project is a typical laser diode pen from Ebay (632 nm). A linear actuator has been designed to move a lens into and out of the beam path to de-focus the laser, which is shown in the image below.
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/Lens linear actuator.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/Linear_actuator.png)
 
 The linear actuator is connected directly to the laser pen. The motor is connected to a cog which drives the linear actuator back and forth and the lens is encapsulated at the end of the linear actuator arm.
 In this system, the photodiode needs to be flipped in and out, as there are two photodiodes that must intermittently intersect the beam path, so as not to obstruct the other photodiode. The photodiode flip-arm is shown below. 
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/Photodiode flip mount.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/PD.png)
 
 This has a 180 rotation servo motor, so two positions can be determined as ‘in beam path’ and ‘out of beam path’. The photodiode will be connected via the 3 wires shown in the image to the circuit.
 The circuit is shown below. This connects all 8 motors to a common power supply that can be plugged into a wall-socket, then routes all signals from each motor to a wire that can be connected to the RPi pins. For the photodiode signal, an ADC has been used, ‘PCF8591P’, which can be seen in the bottom left of the image. This discretises the voltage (0-5V) from the photodiode into binary signal from 0-255 and sends this to the RPi. 
@@ -46,4 +46,4 @@ The circuit is shown below. This connects all 8 motors to a common power supply 
 
 Below shows an image of the entire set-up at present. Later improvements will be getting a PCB made rather than the soldered prototype board, as well as cleaning up some of the 3D printed designs. 
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/Project hardware.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/Project.png)
