@@ -26,18 +26,18 @@ The mirror mount to be automated in this project is a standard kinematic mirror 
 
 All hardware to connect motors to optical components has been designed on TinkerCad and 3D printed on a Flashforge Finder 3D printer. The fundamental hardware component is the motorised mirror mount, shown in the image below. This connects the mount dials to the motors, then links the two motors together and braces them by bolting them onto the spare mirror mount screw hole. 
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/MMM.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/MMM.PNG)
 
 A screenshot of the CAD drawing of two sets of these motor holders is also shown. 
 
 The laser used in this project is a typical laser diode pen from Ebay (632 nm). A linear actuator has been designed to move a lens into and out of the beam path to de-focus the laser, which is shown in the image below.
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/Linear_actuator.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/Linear_actuator.PNG)
 
 The linear actuator is connected directly to the laser pen. The motor is connected to a cog which drives the linear actuator back and forth and the lens is encapsulated at the end of the linear actuator arm.
 In this system, the photodiode needs to be flipped in and out, as there are two photodiodes that must intermittently intersect the beam path, so as not to obstruct the other photodiode. The photodiode flip-arm is shown below. 
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/PD.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/PD.PNG)
 
 This has a 180 rotation servo motor, so two positions can be determined as ‘in beam path’ and ‘out of beam path’. The photodiode will be connected via the 3 wires shown in the image to the circuit.
 The circuit is shown below. This connects all 8 motors to a common power supply that can be plugged into a wall-socket, then routes all signals from each motor to a wire that can be connected to the RPi pins. For the photodiode signal, an ADC has been used, ‘PCF8591P’, which can be seen in the bottom left of the image. This discretises the voltage (0-5V) from the photodiode into binary signal from 0-255 and sends this to the RPi. 
