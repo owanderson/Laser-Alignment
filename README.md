@@ -15,7 +15,7 @@ Laser alignment can be a time consuming process, and manual access to optics is 
 
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Diagram.png)
 
-![](https://github.com/owanderson/Laser-Alignment/blob/master/slide1.png)
+![](https://github.com/owanderson/Laser-Alignment/blob/master/Slide1.png)
 
 In our baseline model, we provide the hardware and software to align a laser to a set point, aligning to the first photo diode by configuring mirror mount 1, flipping out this photo diode by a fixed rotation servo motor, and configuring mirror mount 2 to align to the second photo diode. Once aligned, the second photo diode is removed from the beam path leaving the system in a fully aligned state.
 
