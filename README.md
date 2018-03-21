@@ -9,13 +9,19 @@ Laser alignment can be a time consuming process, and manual access to optics is 
 
 ## Components
 - 4x continuous rotation servo motors
-- 3x fixed rotation servo motors
+- 2x fixed rotation servo motors
 - 2x photodiodes
 - 1x laser pointer
 
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Diagram.png)
 
+While rastering, we alternate between sending pulses to the continuous rotation motors to move the laser beam with checking the signal returned from the photodiode. This means that in practise all of the signals shall not be sent simultaneously, allowing CPU load to be minimised. The following diagram shows all the signal types sent and recieved.
+
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Slide1.PNG)
+
+A flowchart of the rastering process is seen below.
+
+![](https://github.com/owanderson/Laser-Alignment/blob/master/Flowchart.png)
 
 In our baseline model, we provide the hardware and software to align a laser to a set point, aligning to the first photo diode by configuring mirror mount 1, flipping out this photo diode by a fixed rotation servo motor, and configuring mirror mount 2 to align to the second photo diode. Once aligned, the second photo diode is removed from the beam path leaving the system in a fully aligned state.
 
