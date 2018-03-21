@@ -47,3 +47,5 @@ The circuit is shown below. This connects all 8 motors to a common power supply 
 Below shows an image of the entire set-up at present. Later improvements will be getting a PCB made rather than the soldered prototype board, as well as cleaning up some of the 3D printed designs. 
 
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Project.png)
+
+This set-up is currently for a visible light laser diode, but could be adapted to any laser by changing the mirrors and the photodiode with inclusion of an ND filter to avoid photodiode saturation. 
