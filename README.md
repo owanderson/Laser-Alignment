@@ -9,7 +9,7 @@ Laser alignment can be a time consuming process, and manual access to optics is 
 
 ## Components
 - 4x continuous rotation servo motors
-- 2x fixed rotation servo motors
+- 3x fixed rotation servo motors
 - 2x photodiodes
 - 1x laser pointer
 
