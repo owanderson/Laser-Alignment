@@ -12,7 +12,7 @@
 
 
 
-
+/*Here, we difine the UI, with groups of controls*/
 Window::Window(QWidget *parent) :
     QWidget(parent)
 
@@ -33,6 +33,8 @@ Window::Window(QWidget *parent) :
 
 }
 
+/*Here we define the controls to align the beam. Currently, simple raster and random walk functionalities have been removed, due to their uselessness.
+Instead, the only alignment option which is connected is the gradient ascent option*/
 QGroupBox *Window::createFirstExclusiveGroup()
 {
     QGroupBox *groupBox = new QGroupBox(tr("Automated Alignment"));
@@ -92,6 +94,7 @@ QGroupBox *Window::createFirstExclusiveGroup()
     return groupBox;
 }
 
+/*Here, we define the panel which allows the active photodiode to be selected*/
 QGroupBox *Window::createPhotodiodeSelection()
 {
     QGroupBox *groupBox = new QGroupBox(tr("Photodiode Selection"));
@@ -132,6 +135,7 @@ QGroupBox *Window::createPhotodiodeSelection()
     return groupBox;
 }
 
+/*This code is a placeholder for future controls, if needed*/
 QGroupBox *Window::createSecondExclusiveGroup()
 {
     QGroupBox *groupBox = new QGroupBox(tr("E&xclusive Radio Buttons"));
@@ -156,6 +160,7 @@ QGroupBox *Window::createSecondExclusiveGroup()
     return groupBox;
 }
 
+/*This code is a placeholder for future controls, if needed*/
 QGroupBox *Window::createNonExclusiveGroup()
 {
     QGroupBox *groupBox = new QGroupBox(tr("Non-Exclusive Checkboxes"));
@@ -177,6 +182,7 @@ QGroupBox *Window::createNonExclusiveGroup()
     return groupBox;
 }
 
+/*Here we implement the controls for manual motor control*/
 QGroupBox *Window::createPushButtonGroup()
 {
     QGroupBox *groupBox = new QGroupBox(tr("&Manual Servo Control"));
@@ -221,6 +227,7 @@ QGroupBox *Window::createPushButtonGroup()
     return groupBox;
 }
 
+/*Here, the we implement the controls for the fixed rotation servo motors (photodiode 1&2 mountings, and the defocussing element mounting)*/
 QGroupBox *Window::createFlipControlGroup()
 {
     QGroupBox *groupBox = new QGroupBox(tr("&Manual Photodiode Control"));
@@ -258,6 +265,7 @@ QGroupBox *Window::createFlipControlGroup()
 }
 
 // == PRIVATE SLOTS ==
+/*In the below slots, we link the pressing of the buttons on the UI to the call the appropriate fixed rotation servo control code*/
 void Window::photodiode1inPress()
 {
    std::system("./fixedup 22");
@@ -285,7 +293,8 @@ void Window::lensOutPress()
 
 
 
-
+/*This code activates the code which takes a measurement from the photodiode, and saves the measurement to a text file.
+The text file is then read using readfile()*/
 void Window::measurePress()
 {
     std::system("./gogo");
@@ -294,7 +303,12 @@ void Window::measurePress()
 }
 
 
+/*Below, the manual servo control buttons are linked to the appropriate behaviour. When a button is pressed, a command is written to the 
+command line with the target GPIO pin, the selected speed of motor movement, and the current duration of motor movement. For example
 
+./MoveRight 5 52 33
+
+The appropriate formatting is performed below which allows this, taking information from the corresponding sliders on the UI*/
 void Window::gpio5rightPress()
 {
 
@@ -355,7 +369,7 @@ void Window::gpio19leftPress()
 }
 
 
-
+/*Below is the code for the gradient ascent alignment process*/
 void Window::alignbuttonPress()
 {
     stoppage = false;
@@ -365,16 +379,16 @@ void Window::alignbuttonPress()
         if (stoppage == false) {
             std::system("./gogo");
             readfile();
-            value0 = reading;
+            value0 = reading; /*An initial reference measurement is made and stored to value0*/
 
-
+            /*The following code moves the laser above, below, left and right of the reference position, taking a measurement at each location*/
             QString a = "./MoveLeft 13 " + QString::number(currentspeed) + " " + QString::number(currentduration);
             QByteArray conv = a.toLatin1();
             const char *c_str2 = conv.data();
             std::system(c_str2);
             std::system("./gogo");
             readfile();
-            value1 = reading;
+            value1 = reading; 
 
             a = "./MoveRight 13 " + QString::number(currentspeed) + " " + QString::number(currentduration);
             conv = a.toLatin1();
@@ -416,7 +430,8 @@ void Window::alignbuttonPress()
             c_str2 = conv.data();
             std::system(c_str2);
 
-
+            /*Here, the processing of these results is done. Where the central measurement is the greatest, the alignment process is terminated.
+            If not at the central loaction, the code navigates beck to the highest intenstily location and reitterates over this process, gradually aligning the system*/
             if ((value0 >= value1) && (value0 >= value2) && (value0 >= value3) && (value0 >= value4)){
                 stoppage = true;
             }
@@ -452,7 +467,7 @@ void Window::alignbuttonPress()
 
  }
 
-
+/*This is the code which reads in the photodiode reading from the text documant to which it is saved by the program ./gogo*/
 void Window::readfile()
 {
     QString filename="test.txt";
@@ -482,6 +497,7 @@ void Window::readfile()
 
 }
 
+/*Here are the slots which update the current speed duration and threshold settings on an update to the slider controls.*/
 void Window::stopButtonPress(){
 
 }
