@@ -15,7 +15,7 @@ sudo ./servo_demo          # Send servo pulses to GPIO 4.
 sudo ./servo_demo 23 24 25 # Send servo pulses to GPIO 23, 24, 25.
 */
 
-/*This code, when called from the main UI, brings a target fixed rotation servo into the down position*/
+/*This code, when called from the main UI, brings a target fixed rotation servo into the up position*/
 
 #define NUM_GPIO 32
 
