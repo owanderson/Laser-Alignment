@@ -3,6 +3,7 @@
 
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Logo.png)
 
+[Watch our video here!](https://youtu.be/S9H6QgvDfmc)
 
 Welcome to the Laser-Alignment project!
 
@@ -58,3 +59,5 @@ Below shows an image of the entire set-up at present. Later improvements will be
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Project.png)
 
 This set-up is currently for a visible light laser diode, but could be adapted to any laser by changing the mirrors and the photodiode with inclusion of an ND filter to avoid photodiode saturation. 
+
+[Watch our video here!](https://youtu.be/S9H6QgvDfmc)
