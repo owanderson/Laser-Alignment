@@ -1,3 +1,4 @@
+Watch our video here:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/S9H6QgvDfmc/0.jpg)](https://www.youtube.com/watch?v=S9H6QgvDfmc)
 
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Logo.png)
