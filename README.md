@@ -1,5 +1,5 @@
-Watch our video here:
-[linkname](https://youtu.be/S9H6QgvDfmc)
+
+[Watch our video here!](https://youtu.be/S9H6QgvDfmc)
 
 ![](https://github.com/owanderson/Laser-Alignment/blob/master/Logo.png)
 
